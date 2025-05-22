@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/main.css">
+    <!-- Font Awesome  -->
+    <link rel="stylesheet" href="./src/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+    <title> PassCraft </title>
+</head>
+<body>
+    <div class="copied rounded-2xl text-center hidden text-xl"> Password copied succesfully</div>
+    <div class="flex justify-center items-center p-4 min-h-screen " >
+
+        <div id="container" class="w-full max-w-lg max-h-100 sm:w-32 bg-white/10 backdrop-blur-lg p-8 rounded-3xl shadow-2xl border border-white/20 ">
+            <div class="title flex items-center ml-6 mb-10 w-full text-center">
+                <i class="fa-solid fa-shield-halved text-5xl text-emerald-400"></i>
+                <h2 class="text-5xl text-emerald-400 ml-4 font-bold">PassCraft </h2>
+            </div>
+            <div class="ml-2 w-full">
+                <h2  class="font-medium text-xl text-white mb-3"> Password Length : <span></span></h2>
+                <input type="range" class="range w-full bg-white/7 rounded-2xl h-2 text-blue-300 " min="6" max="32" value="16" >
+            </div>
+            
+            <div class="flex flex-col justify-center mt-6">
+                <form class="mb-2 flex items-center gap-4" >
+                    <input type="checkbox" name="nums" id="nums" checked class="accent-emerald-400 w-6 h-6 ">
+                    <label for="nums" class="text-xl text-white"> Include Numbers</label>
+                </form>
+                <form class="flex items-center gap-4">
+                    <input type="checkbox" id="syms" name="symbols" checked class="accent-emerald-400 w-6 h-6">
+                    <label for="symbols" class="text-xl text-white"> Include Symbols</label>
+                </form>
+            </div>
+            <button id="btn" class="text-gray-900 flex items-center justify-center gap-4 cursor-pointer font-bold text-2xl mt-6 bg-gradient-to-r from-emerald-400 to-cyan-400 hover:from-emerald-500 hover:to-cyan-500 p-3 w-full rounded-2xl transition-all duration-300 transform hover:scale-[1.02] ">
+                <i class="fa-solid fa-rotate-right "></i> 
+                <h2>Generate Password</h2>
+            </button>
+            <div id="pass-container" class="w-full mt-10 h-17 rounded-2xl hidden p-5 bg-white/5 shadow-lg shadow-cyan-500/50 justify-between">
+                <h1 id="pass" class="text-xl text-emerald-400 font-bold"></h1>
+                <i class="fa-solid fa-clipboard text-2xl text-emerald-400 cursor-pointer pr-2" id="copy" onclick="copyText()"></i>
+            </div>
+        </div>
+    </div>
+    <script src="./src/main.js"></script>
+</body>
+</html>
